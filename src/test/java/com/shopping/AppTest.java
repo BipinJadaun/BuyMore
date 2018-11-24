@@ -1,4 +1,4 @@
-package com.shopping.BuyMore;
+package com.shopping;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
