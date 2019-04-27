@@ -1,4 +1,4 @@
-package com.shopping.discount;
+package com.buymore.discount;
 
 public enum DiscountOptions {
 

@@ -1,8 +1,8 @@
-package com.shopping.discount;
+package com.buymore.discount;
 
+import com.buymore.guice.DiscountProvider;
 import com.google.inject.ImplementedBy;
 import com.google.inject.ProvidedBy;
-import com.shopping.guice.DiscountProvider;
 
 //@ImplementedBy(NoDiscount.class)
 //@ProvidedBy(DiscountProvider.class)

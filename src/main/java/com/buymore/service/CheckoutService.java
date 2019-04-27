@@ -1,28 +1,29 @@
-package com.shopping.discountservice;
+package com.buymore.service;
 
+import com.buymore.discount.IDiscount;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import com.shopping.discount.IDiscount;
 
-public class DiscountService {
-	private final IDiscount discount;
-	//private final Provider<IDiscount> discount;
-
+public class CheckoutService {
+	
+	/*private final IDiscount discount;
 	@Inject
 	public DiscountService(IDiscount discount) {
 		this.discount = discount;
-	}
-	
-	/*@Inject
-	public DiscountService(Provider<IDiscount> discount) {
-		this.discount = discount;
 	}*/
 	
+	private final Provider<IDiscount> discountProvider;	
+	@Inject
+	public CheckoutService(Provider<IDiscount> discountProvider) {
+		this.discountProvider = discountProvider;
+	}
+	
 	public double checkout(double shoppingCartTotal){
-		System.out.println("Discount Type = "+ discount.toString());
-		double totalDiscount = discount.getDiscount();
-		//System.out.println("Discount Type = "+ discount.get().toString());
-		//double totalDiscount = discount.get().getDiscount();
+		/*System.out.println("Discount Type = "+ discount.toString());
+		double totalDiscount = discount.getDiscount();*/
+		
+		System.out.println("Discount Type = "+ discountProvider.get().toString());
+		double totalDiscount = discountProvider.get().getDiscount();
 		
 		double totalAmountAfterDiscount = shoppingCartTotal - (shoppingCartTotal * totalDiscount);
 		
